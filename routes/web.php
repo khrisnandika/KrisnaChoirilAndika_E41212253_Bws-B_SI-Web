@@ -7,27 +7,29 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Home2Controller;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 // Route::get('/', function () {
 //     return view('home');
 // });
 
-// Route::get('home', [HomeController::class, 'acara12']);
-// Route::get('index', [ManagementUserController::class, 'index']);
-// Route::get('user', [ManagementUserController::class, 'index']);
-// Route::resource('user', ManagementUserController::class);
+/*
+=====Penjelasan Route/Routing=====
+Route atau Routing berperan sebagai penghubung antara user 
+dengan keseluruhan framework. Dalam Laravel, setiap alamat 
+web yang kita ketik di web browser akan melewati route terlebih 
+dahulu. Route-lah yang menentukan ke mana proses akan dibawa, 
+apakah ke Controller atau ke View.
+*/
 
+//minggu 3
+ //proses route ini akan menuju pada beberapa view, maka request dari user akan direspon oleh Controller.
+Route::get('home', [HomeController::class, 'acara12']);
+Route::get('index', [ManagementUserController::class, 'index']);
+Route::get('user', [ManagementUserController::class, 'index']);
+Route::resource('user', ManagementUserController::class);
 
-Route::get('home', [BerandaController::class, 'index']);
-Route::get('/', [Home2Controller::class, 'index']);
-Route::get('dashboard', [DashboardController::class, 'dashboard']);
+//minggu4
+Route::get('home', [BerandaController::class, 'index']);  //proses route ini akan menuju pada view home, maka request dari user akan direspon oleh BerandaController.
+
+//minggu 5
+Route::get('dashboard', [DashboardController::class, 'dashboard']); //proses route ini akan menuju pada view dashboard, maka request dari user akan direspon oleh DashboardController.

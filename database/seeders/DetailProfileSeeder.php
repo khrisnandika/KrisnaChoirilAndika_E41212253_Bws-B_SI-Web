@@ -13,6 +13,7 @@ class DetailProfileSeeder extends Seeder
      */
     public function run(): void
     {
+        //ditahap ini untuk mengisi data pada tabel
         DB::table('detail_profile')->insert([
             'address' => 'Jember',
             'nomor_tlp' => '08234234',

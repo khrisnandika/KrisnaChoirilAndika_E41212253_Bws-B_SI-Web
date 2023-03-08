@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //disini kami membuat tabel datail profile berisi beberapa field seperti dibawah
         Schema::create('detail_profile', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('address');
